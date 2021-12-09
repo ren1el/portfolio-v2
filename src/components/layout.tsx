@@ -1,5 +1,5 @@
 import Footer from './footer'
-import Navbar from './navbar'
+import Header from './header'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -8,8 +8,8 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <>
-      <Navbar />
-      <main>{children}</main>
+      <Header />
+      <main className="container">{children}</main>
       <Footer />
     </>
   )

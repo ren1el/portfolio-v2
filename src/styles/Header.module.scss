@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100px;
+}
+
+.brand {
+  display: none;
+}
+
+.contact {
+  display: none;
+}
+
+@media (min-width: $container-width) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .brand {
+    display: block;
+  }
+
+  .contact {
+    display: block;
+  }
+}

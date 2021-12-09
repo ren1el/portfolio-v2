@@ -1,0 +1,41 @@
+@import './fonts.css';
+@import './variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: $background-page;
+  color: $text-color;
+  padding: 0;
+  margin: 0;
+  font-family: 'Apercu', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: $font-size-reg;
+}
+
+body #__next {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  padding: 0 50px;
+  border: 1px solid #fff;
+}
+
+@media (min-width: $container-width) {
+  .container {
+    width: $container-width;
+    max-width: $container-width;
+  }
+}

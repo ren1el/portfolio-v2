@@ -1,0 +1,27 @@
+@import './variables.scss';
+
+.nav {
+  display: none;
+}
+
+.nav__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav__link {
+  color: $nav-link-inactive;
+  margin-right: 5em;
+}
+
+.nav__link-active {
+  color: $nav-link-active;
+}
+
+@media (min-width: $container-width) {
+  .nav {
+    display: block;
+  }
+}
