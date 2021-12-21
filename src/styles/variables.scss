@@ -3,17 +3,30 @@ $bp-sm: 576px;
 $bp-md: 768px;
 $bp-lg: 992px;
 
-/* colors */
+/* general colors */
 $black: #000;
 $white: #fff;
-$light-grey: #999;
+$grey: #999;
+$light-grey: #ccc;
 
 /* ui colors */
-$text-color: $white;
-$background-page: $black;
+$text-primary: $light-grey;
+$text-secondary: $white;
+$text-tertiary: $black;
+
+$page-bg: $black;
 $nav-link-active: $white;
-$nav-link-inactive: $light-grey;
+$nav-link-inactive: $grey;
+$sidebar-bg: $black;
+
+/* font sizes */
+$fs-sm: 16px;
+$fs-md: 18px;
+$fs-lg: 20px;
 
 /* misc ui */
-$font-size-reg: 20px;
+$font-family: 'Apercu', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+  Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$header-height: 75px;
 $container-width: 1350px;
+$border-radius: 2px;

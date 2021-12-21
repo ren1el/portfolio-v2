@@ -4,15 +4,23 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 100px;
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  background-color: $black;
 }
 
 .brand {
   display: none;
+  color: $text-secondary;
 }
 
 .contact {
+  padding: 0.25em 1.5em;
+  border-radius: $border-radius;
   display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: $container-width) {
@@ -25,6 +33,6 @@
   }
 
   .contact {
-    display: block;
+    display: flex;
   }
 }

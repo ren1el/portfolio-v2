@@ -5,10 +5,10 @@ import Sidebar from './sidebar'
 const Header = (): JSX.Element => {
   return (
     <header className={`container ${styles.header}`}>
-      <div className={styles['brand']}>Reniel Ocampo</div>
+      <div className={styles.brand}>Reniel Ocampo</div>
       <Navbar />
       <Sidebar />
-      <button className={styles['contact']}>Contact</button>
+      <button className={styles.contact}>Contact</button>
     </header>
   )
 }

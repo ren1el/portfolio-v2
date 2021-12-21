@@ -1,28 +1,80 @@
 @import './variables.scss';
 
 .nav {
-  display: flex;
-  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out; // should match ms in component
+  background-color: $sidebar-bg;
+  display: none;
+  align-items: center;
+  padding-left: 2em;
+
+  &.display {
+    display: flex;
+  }
+
+  &.open {
+    opacity: 1;
+  }
+
+  .list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.75rem;
+
+    .item {
+      color: $nav-link-inactive;
+      margin-bottom: 0.2em;
+    }
+
+    .itemActive {
+      color: $nav-link-active;
+    }
+  }
 }
 
-.nav__list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
+.button {
+  padding: 15px 0 15px 15px;
+  border: none;
+  background-color: transparent;
+  z-index: 1;
 
-.nav__link {
-  color: $nav-link-inactive;
-  margin-right: 5em;
-}
+  .iconLine {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: $white;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: 0px;
+    margin: 6px 0;
+  }
 
-.nav__link-active {
-  color: $nav-link-active;
+  &.open {
+    .top {
+      transform: translateY(-5px) rotateZ(45deg);
+    }
+
+    .bottom {
+      transform: translateY(5px) rotateZ(-45deg);
+    }
+  }
 }
 
 @media (min-width: $container-width) {
   .nav {
+    &.display {
+      display: none;
+    }
+  }
+
+  .button {
     display: none;
   }
 }
