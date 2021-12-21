@@ -1,6 +1,6 @@
 import styles from '../styles/Header.module.scss'
-import Navbar from './navbar'
-import Sidebar from './sidebar'
+import Navbar from './Navbar'
+import Sidebar from './Sidebar'
 
 const Header = (): JSX.Element => {
   return (
