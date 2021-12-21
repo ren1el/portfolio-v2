@@ -3,7 +3,9 @@ import styles from '../styles/Sidebar.module.scss'
 
 const Sidebar = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false)
+  const [activeItem, setActiveItem] = useState(0)
   const navRef = useRef<HTMLElement | null>(null)
+  const labels = ['About', 'Work', 'Experience', 'Skills'] // TODO: get as static props
 
   useEffect(() => {
     if (isOpen) {
@@ -45,46 +47,22 @@ const Sidebar = (): JSX.Element => {
     <>
       <nav className={styles.nav} ref={navRef}>
         <ul className={styles.list}>
-          <li className={`${styles.item} ${styles.itemActive}`}>
-            <a
-              href="#"
-              onClick={() => {
-                setIsOpen(!isOpen)
-              }}
-            >
-              About
-            </a>
-          </li>
-          <li className={styles.item}>
-            <a
-              href="#"
-              onClick={() => {
-                setIsOpen(!isOpen)
-              }}
-            >
-              Work
-            </a>
-          </li>
-          <li className={styles.item}>
-            <a
-              href="#"
-              onClick={() => {
-                setIsOpen(!isOpen)
-              }}
-            >
-              Experience
-            </a>
-          </li>
-          <li className={styles.item}>
-            <a
-              href="#"
-              onClick={() => {
-                setIsOpen(!isOpen)
-              }}
-            >
-              Skills
-            </a>
-          </li>
+          {labels.map((label, index) => {
+            return (
+              <li
+                key={index}
+                className={`${styles.item} ${activeItem === index && styles.active}`}
+                onMouseOver={() => {
+                  setActiveItem(index)
+                }}
+                onMouseOut={() => {
+                  setActiveItem(0)
+                }}
+              >
+                <a href="#">{label}</a>
+              </li>
+            )
+          })}
         </ul>
       </nav>
       <button

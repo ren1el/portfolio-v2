@@ -32,10 +32,11 @@
     .item {
       color: $nav-link-inactive;
       margin-bottom: 0.2em;
-    }
+      transition: color 200ms ease-in-out;
 
-    .itemActive {
-      color: $nav-link-active;
+      &.active {
+        color: $nav-link-active;
+      }
     }
   }
 }

@@ -4,20 +4,21 @@
   display: none;
 }
 
-.nav__list {
+.list {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
-}
 
-.nav__link {
-  color: $nav-link-inactive;
-  margin-right: 5em;
-}
+  .item {
+    color: $nav-link-inactive;
+    margin-right: 5em;
+    transition: color 200ms ease-in-out;
 
-.nav__link-active {
-  color: $nav-link-active;
+    &.active {
+      color: $nav-link-active;
+    }
+  }
 }
 
 @media (min-width: $container-width) {
