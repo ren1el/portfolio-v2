@@ -1,0 +1,75 @@
+@import './variables.scss';
+
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.aside {
+  width: 100%;
+  order: 2;
+
+  .headshotContainer {
+    max-width: 350px;
+
+    .headshot {
+      mix-blend-mode: luminosity;
+      position: relative;
+      z-index: 1;
+
+      &:hover {
+        mix-blend-mode: normal;
+      }
+    }
+  }
+}
+
+.about {
+  border-top: 1px solid #fff;
+  order: 1;
+}
+
+@media (min-width: $bp-md) {
+  .aboutSection {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .aside {
+    width: 200px;
+    margin-right: 50px;
+    order: 1;
+
+    .headshotContainer {
+      width: 100%;
+    }
+  }
+
+  .about {
+    flex: 1;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .aside {
+    width: 300px;
+    margin-right: 75px;
+  }
+
+  .about {
+    .firstSection {
+      margin-right: 1.5em;
+    }
+  }
+
+  .text {
+    display: flex;
+  }
+}
+
+@media (min-width: $container-width) {
+  .aside {
+    width: 300px;
+    margin-right: 100px;
+  }
+}

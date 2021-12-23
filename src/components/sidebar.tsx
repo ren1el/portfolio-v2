@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from '../styles/Sidebar.module.scss'
 
-const Sidebar = (): JSX.Element => {
-  const [isOpen, setIsOpen] = useState(false)
+type SidebarProps = {
+  isSidebarOpen: boolean
+}
+
+const Sidebar = ({ isSidebarOpen }: SidebarProps): JSX.Element => {
   const [activeItem, setActiveItem] = useState(0)
   const navRef = useRef<HTMLElement | null>(null)
   const labels = ['About', 'Work', 'Experience', 'Skills'] // TODO: get as static props
 
   useEffect(() => {
-    if (isOpen) {
+    if (isSidebarOpen) {
       display(true)
 
       setTimeout(() => {
@@ -21,7 +24,7 @@ const Sidebar = (): JSX.Element => {
         display(false)
       }, 300) // should match ms in css
     }
-  }, [isOpen])
+  }, [isSidebarOpen])
 
   const display = (shouldDisplay: boolean) => {
     // `display` !== `open`
@@ -44,37 +47,26 @@ const Sidebar = (): JSX.Element => {
   }
 
   return (
-    <>
-      <nav className={styles.nav} ref={navRef}>
-        <ul className={styles.list}>
-          {labels.map((label, index) => {
-            return (
-              <li
-                key={index}
-                className={`${styles.item} ${activeItem === index && styles.active}`}
-                onMouseOver={() => {
-                  setActiveItem(index)
-                }}
-                onMouseOut={() => {
-                  setActiveItem(0)
-                }}
-              >
-                <a href="#">{label}</a>
-              </li>
-            )
-          })}
-        </ul>
-      </nav>
-      <button
-        className={`${styles.button} ${isOpen ? styles.open : ''}`}
-        onClick={() => {
-          setIsOpen(!isOpen)
-        }}
-      >
-        <span className={`${styles.iconLine} ${styles.top}`} />
-        <span className={`${styles.iconLine} ${styles.bottom}`} />
-      </button>
-    </>
+    <nav className={styles.nav} ref={navRef}>
+      <ul className={styles.list}>
+        {labels.map((label, index) => {
+          return (
+            <li
+              key={index}
+              className={`${styles.item} ${activeItem === index && styles.active}`}
+              onMouseOver={() => {
+                setActiveItem(index)
+              }}
+              onMouseOut={() => {
+                setActiveItem(0)
+              }}
+            >
+              <a href="#">{label}</a>
+            </li>
+          )
+        })}
+      </ul>
+    </nav>
   )
 }
 

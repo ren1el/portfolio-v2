@@ -8,11 +8,13 @@
   position: fixed;
   top: 0;
   background-color: $black;
+  z-index: 9999;
 }
 
 .brand {
   display: none;
   color: $text-secondary;
+  font-weight: 500;
 }
 
 .contact {

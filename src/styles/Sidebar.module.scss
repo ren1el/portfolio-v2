@@ -12,6 +12,7 @@
   display: none;
   align-items: center;
   padding-left: 2em;
+  z-index: 999;
 
   &.display {
     display: flex;
@@ -41,41 +42,10 @@
   }
 }
 
-.button {
-  padding: 15px 0 15px 15px;
-  border: none;
-  background-color: transparent;
-  z-index: 1;
-
-  .iconLine {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background-color: $white;
-    transition: transform 0.3s ease-in-out;
-    transform-origin: 0px;
-    margin: 6px 0;
-  }
-
-  &.open {
-    .top {
-      transform: translateY(-5px) rotateZ(45deg);
-    }
-
-    .bottom {
-      transform: translateY(5px) rotateZ(-45deg);
-    }
-  }
-}
-
 @media (min-width: $container-width) {
   .nav {
     &.display {
       display: none;
     }
-  }
-
-  .button {
-    display: none;
   }
 }

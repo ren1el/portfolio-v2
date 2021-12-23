@@ -1,12 +1,13 @@
 import type { NextPage } from 'next'
+import About from '../components/About'
+import Hero from '../components/Hero'
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
   return (
     <>
-      <section>Section 1</section>
-      <section>Section 2</section>
-      <section>Section 3</section>
+      <Hero />
+      <About />
     </>
   )
 }
