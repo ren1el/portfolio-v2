@@ -20,6 +20,10 @@
 .aboutContent {
   border-top: 1px solid $white;
   order: 1;
+
+  & div {
+    flex: 1;
+  }
 }
 
 @media (min-width: $bp-md) {
