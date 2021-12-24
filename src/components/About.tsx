@@ -1,6 +1,7 @@
 import styles from '../styles/About.module.scss'
 import profileImg from '../../public/images/me.png'
 import Image from 'next/image'
+import Socials from './Socials'
 
 const About = (): JSX.Element => {
   return (
@@ -9,6 +10,7 @@ const About = (): JSX.Element => {
         <div className={styles.headshotContainer}>
           <Image className={styles.headshot} src={profileImg} alt="Headshot" />
         </div>
+        <Socials />
       </aside>
       <div className={`content ${styles.aboutContent}`}>
         <h2 className={'sectionHeader'}>About</h2>

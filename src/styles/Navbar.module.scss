@@ -14,7 +14,6 @@
   .item {
     color: $nav-link-inactive;
     margin-right: 5em;
-    transition: color 200ms ease-in-out;
 
     &.active {
       color: $nav-link-active;
