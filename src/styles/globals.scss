@@ -52,11 +52,22 @@ p {
   padding: 0 25px;
 }
 
-.sectionHeader {
-  margin: 1em 0;
-  font-size: 1rem;
-  font-weight: 500;
-  color: $white;
+.section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10em;
+
+  .aside {
+    width: 100%;
+    border-top: 1px solid $white;
+  }
+
+  .sectionHeader {
+    margin: 1em 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $white;
+  }
 }
 
 @media (min-width: $bp-sm) {
@@ -65,10 +76,45 @@ p {
   }
 }
 
+@media (min-width: $bp-md) {
+  .section {
+    flex-direction: row;
+    justify-content: space-between;
+
+    .aside {
+      width: 200px;
+      margin-right: 50px;
+      position: sticky;
+      align-self: start;
+      top: calc($header-height + 25px);
+    }
+
+    .content {
+      flex: 1;
+    }
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .section {
+    .aside {
+      width: 300px;
+      margin-right: 75px;
+    }
+  }
+}
+
 @media (min-width: $container-width) {
   .container {
     width: $container-width;
     max-width: $container-width;
     padding: 0 50px;
+  }
+
+  .section {
+    .aside {
+      width: 300px;
+      margin-right: 100px;
+    }
   }
 }

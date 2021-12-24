@@ -4,13 +4,13 @@ import Image from 'next/image'
 
 const About = (): JSX.Element => {
   return (
-    <section className={styles.aboutSection}>
-      <aside className={styles.aside}>
+    <section className={'section'}>
+      <aside className={`aside ${styles.aboutAside}`}>
         <div className={styles.headshotContainer}>
           <Image className={styles.headshot} src={profileImg} alt="Headshot" />
         </div>
       </aside>
-      <div className={styles.about}>
+      <div className={`content ${styles.aboutContent}`}>
         <h2 className={'sectionHeader'}>About</h2>
         <div className={styles.text}>
           <div className={styles.firstSection}>
