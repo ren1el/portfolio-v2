@@ -5,20 +5,41 @@ import IconInstagram from '../icons/Instagram'
 import IconLinkedin from '../icons/LinkedIn'
 
 const Socials = (): JSX.Element => {
+  const socials = [
+    {
+      name: 'LinkedIn',
+      link: 'https://linkedin.com/in/renielocampo',
+    },
+    {
+      name: 'GitHub',
+      link: 'https://github.com/ren1el',
+    },
+    {
+      name: 'Dribbble',
+      link: 'https://dribbble.com/ren1el',
+    },
+    {
+      name: 'Instagram',
+      link: 'https://instagram.com/ren1el',
+    },
+  ]
+
   return (
     <div className={styles.socials}>
-      <a className={styles.link} href={'https://linkedin.com/in/renielocampo'}>
-        <IconLinkedin />
-      </a>
-      <a className={styles.link} href={'https://github.com/ren1el'}>
-        <IconGitHub />
-      </a>
-      <a className={styles.link} href={'https://dribbble.com/ren1el'}>
-        <IconDribbble />
-      </a>
-      <a className={styles.link} href={'https://instagram.com/ren1el'}>
-        <IconInstagram />
-      </a>
+      {socials.map((social, index) => (
+        <a
+          key={index}
+          href={social.link}
+          className={styles.link}
+          target={'_blank'}
+          rel={'noreferrer'}
+        >
+          {social.name === 'LinkedIn' && <IconLinkedin />}
+          {social.name === 'GitHub' && <IconGitHub />}
+          {social.name === 'Dribbble' && <IconDribbble />}
+          {social.name === 'Instagram' && <IconInstagram />}
+        </a>
+      ))}
     </div>
   )
 }
