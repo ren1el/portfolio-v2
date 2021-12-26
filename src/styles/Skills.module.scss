@@ -1,0 +1,32 @@
+@import './variables.scss';
+
+.skillsContent {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 2em;
+  overflow: scroll;
+
+  & div {
+    min-width: 8em;
+  }
+
+  .skillTitle {
+    margin: 0;
+    padding: 1em 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $white;
+    border-top: 1px solid $white;
+  }
+
+  .skillList {
+    list-style-type: none;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .skillsContent {
+    gap: 4em;
+  }
+}
