@@ -1,0 +1,66 @@
+@import './variables.scss';
+
+.subsection {
+  margin-bottom: 4em;
+
+  .title {
+    margin: 0;
+    padding: 1em 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $white;
+    border-top: 1px solid $white;
+  }
+
+  .table {
+    margin-bottom: 2em;
+
+    .leftColumn {
+      flex: 0 0 175px;
+    }
+
+    .rightColumn {
+      flex: 1;
+    }
+
+    .heading {
+      display: block;
+      color: $text-secondary;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (min-width: $bp-md) {
+  .subsection {
+    .table {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2.25em;
+
+      .leftColumn {
+        margin-right: 35px;
+      }
+    }
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .subsection {
+    .table {
+      .leftColumn {
+        margin-right: 45px;
+      }
+    }
+  }
+}
+
+@media (min-width: $container-width) {
+  .subsection {
+    .table {
+      .leftColumn {
+        margin-right: 75px;
+      }
+    }
+  }
+}
