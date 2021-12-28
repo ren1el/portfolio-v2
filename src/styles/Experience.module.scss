@@ -9,7 +9,6 @@
     font-size: 1rem;
     font-weight: 500;
     color: $white;
-    border-top: 1px solid $white;
   }
 
   .table {
@@ -33,6 +32,10 @@
 
 @media (min-width: $bp-md) {
   .subsection {
+    .title {
+      border-top: 1px solid $white;
+    }
+
     .table {
       display: flex;
       justify-content: space-between;

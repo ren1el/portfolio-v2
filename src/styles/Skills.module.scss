@@ -17,11 +17,16 @@
     font-size: 1rem;
     font-weight: 500;
     color: $white;
-    border-top: 1px solid $white;
   }
 
   .skillList {
     list-style-type: none;
+  }
+}
+
+@media (min-width: $bp-md) {
+  .skillTitle {
+    border-top: 1px solid $white;
   }
 }
 
