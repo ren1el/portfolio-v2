@@ -1,16 +1,21 @@
 @import './variables.scss';
 
 .socials {
-  width: 100%;
   display: flex;
   justify-content: center;
 
   .link {
     color: $nav-link-inactive;
     margin-right: 1.25em;
+    display: flex;
+    align-items: center;
 
     &:hover {
       color: $nav-link-active;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
