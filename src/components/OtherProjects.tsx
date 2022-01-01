@@ -58,7 +58,12 @@ const OtherProjects = (): JSX.Element => {
               <div className={styles.titleLinksContainer}>
                 <span className={styles.title}>{project.title}</span>
                 {project.githubLink && (
-                  <a href={project.githubLink} className={styles.icon}>
+                  <a
+                    href={project.githubLink}
+                    className={styles.icon}
+                    target={'_blank'}
+                    rel={'noreferrer'}
+                  >
                     <IconGitHub />
                   </a>
                 )}
