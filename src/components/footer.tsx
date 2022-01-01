@@ -3,7 +3,7 @@ import styles from '../styles/Footer.module.scss'
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="container">
+    <footer className={`container ${styles.footerContainer}`}>
       <div className={styles.headingContainer}>
         <h2 className={styles.heading}>Thanks for stopping by!</h2>
         <h2 className={styles.heading}>Something clever here probably.</h2>
@@ -21,7 +21,9 @@ const Footer = (): JSX.Element => {
             Built using <a href={'https://nextjs.org/'}>Next.js</a>.
           </span>
         </div>
-        <Socials />
+        <div className={styles.socials}>
+          <Socials />
+        </div>
       </div>
     </footer>
   )

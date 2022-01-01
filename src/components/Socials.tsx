@@ -25,7 +25,7 @@ const Socials = (): JSX.Element => {
   ]
 
   return (
-    <div className={styles.socials}>
+    <>
       {socials.map((social, index) => (
         <a
           key={index}
@@ -40,7 +40,7 @@ const Socials = (): JSX.Element => {
           {social.name === 'Instagram' && <IconInstagram />}
         </a>
       ))}
-    </div>
+    </>
   )
 }
 
