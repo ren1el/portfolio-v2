@@ -1,0 +1,93 @@
+@import '../styles/variables.scss';
+
+@mixin order($removeOrder: false) {
+  &.left {
+    order: 0;
+    margin-right: if($removeOrder, 0, 2em);
+  }
+
+  &.right {
+    order: if($removeOrder, 0, 1);
+    margin-left: if($removeOrder, 0, 2em);
+  }
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .description {
+    width: 100%;
+    flex: 1;
+
+    .title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $text-secondary;
+    }
+  }
+
+  .thumbnailContainer {
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+@media (min-width: $bp-sm) {
+  .projectCard {
+    flex-direction: row;
+
+    .thumbnailContainer {
+      max-width: none;
+      margin-bottom: 0;
+      flex: 1;
+
+      @include order;
+    }
+  }
+}
+
+@media (min-width: $bp-md) {
+  .projectCard {
+    flex-direction: column;
+    margin-bottom: 7.5em;
+
+    .thumbnailContainer {
+      max-width: 100%;
+      margin-bottom: 1em;
+
+      @include order(true);
+    }
+  }
+}
+
+@media (min-width: 1180px) {
+  .projectCard {
+    display: flex;
+    flex-direction: row;
+
+    .thumbnailContainer {
+      margin-bottom: 0;
+
+      @include order;
+    }
+  }
+}
+
+@media (min-width: $container-width) {
+  .projectCard {
+    align-items: normal;
+
+    .description {
+      padding-top: 0.5em;
+    }
+  }
+}
