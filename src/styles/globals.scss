@@ -75,15 +75,7 @@ ul {
 
   .aside {
     width: 100%;
-    position: sticky;
-    background-color: $text-tertiary;
-    top: 0;
-    transition: top 450ms ease-in-out;
-    z-index: 1;
-
-    .headerVisible & {
-      top: $header-height;
-    }
+    position: relative;
 
     &::before {
       content: '';
@@ -125,11 +117,7 @@ ul {
       margin-right: 50px;
       position: sticky;
       align-self: start;
-      top: 50px;
-
-      .headerVisible & {
-        top: calc($header-height + 50px);
-      }
+      top: calc($header-height + 50px);
 
       &::before {
         width: 75%;

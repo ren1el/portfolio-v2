@@ -3,7 +3,6 @@ import Header from './Header'
 import styles from '../styles/Layout.module.scss'
 import { useEffect, useState } from 'react'
 import Sidebar from './Sidebar'
-import useScrollDirection, { Scrolling } from '../hooks/useScrollDirection'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -11,7 +10,6 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const scrollDirection = useScrollDirection()
 
   useEffect(() => {
     if (isSidebarOpen) {
@@ -23,19 +21,9 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 
   return (
     <>
-      <Header
-        isSidebarOpen={isSidebarOpen}
-        setIsSidebarOpen={setIsSidebarOpen}
-        scrollDirection={scrollDirection}
-      />
+      <Header isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
       <Sidebar isSidebarOpen={isSidebarOpen} />
-      <main
-        className={`container ${styles.mainContainer} ${
-          scrollDirection === Scrolling.UP ? 'headerVisible' : ''
-        }`}
-      >
-        {children}
-      </main>
+      <main className={`container ${styles.mainContainer}`}>{children}</main>
       <Footer />
     </>
   )
