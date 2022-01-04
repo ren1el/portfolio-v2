@@ -20,7 +20,7 @@ const Navbar = (): JSX.Element => {
                 setActiveItem(0)
               }}
             >
-              <a href="#">{label}</a>
+              <a href={label === 'About' ? '#' : `#${label}`}>{label}</a>
             </li>
           )
         })}

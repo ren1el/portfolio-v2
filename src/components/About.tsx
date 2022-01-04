@@ -6,7 +6,7 @@ import { socialIconLinks } from '../../contentConfig'
 
 const About = (): JSX.Element => {
   return (
-    <section className={'section'}>
+    <section className={'section'} id={'About'}>
       <aside className={`aside noBorder ${styles.aboutAside}`}>
         <div className={styles.headshotContainer}>
           <Image className={styles.headshot} src={profileImg} alt="Headshot" />

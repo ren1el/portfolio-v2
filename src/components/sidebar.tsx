@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import styles from '../styles/Sidebar.module.scss'
 
 type SidebarProps = {
   isSidebarOpen: boolean
+  setIsSidebarOpen: Dispatch<SetStateAction<boolean>>
 }
 
-const Sidebar = ({ isSidebarOpen }: SidebarProps): JSX.Element => {
+const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps): JSX.Element => {
   const [activeItem, setActiveItem] = useState(0)
   const navRef = useRef<HTMLElement | null>(null)
   const labels = ['About', 'Work', 'Experience', 'Skills'] // TODO: get as static props
@@ -61,7 +62,14 @@ const Sidebar = ({ isSidebarOpen }: SidebarProps): JSX.Element => {
                 setActiveItem(0)
               }}
             >
-              <a href="#">{label}</a>
+              <a
+                href={label === 'About' ? '#' : `#${label}`}
+                onClick={() => {
+                  setIsSidebarOpen(!isSidebarOpen)
+                }}
+              >
+                {label}
+              </a>
             </li>
           )
         })}

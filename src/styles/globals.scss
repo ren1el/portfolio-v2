@@ -15,6 +15,7 @@ body {
   font-size: $fs-sm;
   font-weight: 300;
   line-height: 2.25;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -72,6 +73,7 @@ ul {
   display: flex;
   flex-direction: column;
   margin-bottom: 2em;
+  scroll-margin: $header-height;
 
   .aside {
     width: 100%;
@@ -111,6 +113,7 @@ ul {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 5em;
+    scroll-margin: calc($header-height + 50px);
 
     .aside {
       width: 200px;

@@ -5,7 +5,7 @@ import { featuredProjects } from '../../contentConfig'
 
 const FeaturedProjects = (): JSX.Element => {
   return (
-    <section className={'section'}>
+    <section className={'section'} id={'Work'}>
       <aside className={`aside`}>
         <h2 className={'sectionHeader'}>Featured Projects</h2>
       </aside>

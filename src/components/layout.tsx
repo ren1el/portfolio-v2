@@ -22,7 +22,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <>
       <Header isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
-      <Sidebar isSidebarOpen={isSidebarOpen} />
+      <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
       <main className={`container ${styles.mainContainer}`}>{children}</main>
       <Footer />
     </>

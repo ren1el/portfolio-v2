@@ -3,7 +3,7 @@ import styles from '../styles/Skills.module.scss'
 
 const Skills = (): JSX.Element => {
   return (
-    <section className={'section'}>
+    <section className={'section'} id={'Skills'}>
       <aside className={`aside`}>
         <h2 className={'sectionHeader'}>Skills</h2>
       </aside>

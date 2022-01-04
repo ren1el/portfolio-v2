@@ -3,7 +3,7 @@ import styles from '../styles/Experience.module.scss'
 
 const Experience = (): JSX.Element => {
   return (
-    <section className={'section'}>
+    <section className={'section'} id={'Experience'}>
       <aside className={`aside`}>
         <h2 className={'sectionHeader'}>Experience</h2>
       </aside>
