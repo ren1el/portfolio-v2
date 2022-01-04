@@ -26,11 +26,25 @@
     width: 100%;
     flex: 1;
 
-    .title {
-      margin: 0;
-      font-size: 1rem;
-      font-weight: 500;
-      color: $text-secondary;
+    .titleLinksContainer {
+      display: flex;
+      align-items: center;
+
+      .title {
+        margin: 0 0.75em 0 0;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $text-secondary;
+      }
+
+      a {
+        margin-right: 0.75em;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 

@@ -1,5 +1,6 @@
-import Socials from './Socials'
+import IconLinks from './IconLinks'
 import styles from '../styles/Footer.module.scss'
+import { socialIconLinks } from '../../contentConfig'
 
 const Footer = (): JSX.Element => {
   return (
@@ -22,7 +23,7 @@ const Footer = (): JSX.Element => {
           </span>
         </div>
         <div className={styles.socials}>
-          <Socials />
+          <IconLinks iconLinks={socialIconLinks} />
         </div>
       </div>
     </footer>

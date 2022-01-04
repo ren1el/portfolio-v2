@@ -1,7 +1,8 @@
 import styles from '../styles/About.module.scss'
 import profileImg from '../../public/images/me.png'
 import Image from 'next/image'
-import Socials from './Socials'
+import IconLinks from './IconLinks'
+import { socialIconLinks } from '../../contentConfig'
 
 const About = (): JSX.Element => {
   return (
@@ -11,7 +12,7 @@ const About = (): JSX.Element => {
           <Image className={styles.headshot} src={profileImg} alt="Headshot" />
         </div>
         <div className={styles.socials}>
-          <Socials />
+          <IconLinks iconLinks={socialIconLinks} />
         </div>
       </aside>
       <div className={`content ${styles.aboutContent}`}>

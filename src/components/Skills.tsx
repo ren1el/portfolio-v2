@@ -1,25 +1,7 @@
+import { skills } from '../../contentConfig'
 import styles from '../styles/Skills.module.scss'
 
 const Skills = (): JSX.Element => {
-  const skills = [
-    {
-      title: 'Languages',
-      skillList: ['JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Python', 'Java', 'SQL'],
-    },
-    {
-      title: 'Frameworks & Libraries',
-      skillList: ['React', 'Redux', 'Gatsby', 'Next.js', 'Django', 'Express', 'Bootstrap'],
-    },
-    {
-      title: 'Tools',
-      skillList: ['AWS', 'MongoDB', 'Git', 'Node'],
-    },
-    {
-      title: 'Design',
-      skillList: ['Photoshop', 'Figma', 'Adobe XD'],
-    },
-  ]
-
   return (
     <section className={'section'}>
       <aside className={`aside`}>

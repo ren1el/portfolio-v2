@@ -19,25 +19,20 @@
     .titleLinksContainer {
       display: flex;
       align-items: center;
-    }
 
-    .title {
-      font-weight: 400;
-      color: $text-secondary;
-      margin-right: 0.75em;
-    }
+      .title {
+        font-weight: 400;
+        color: $text-secondary;
+        margin-right: 0.75em;
+      }
 
-    .icon {
-      width: 20px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: $nav-link-inactive;
-      margin-right: 0.75em;
+      a {
+        margin-right: 0.75em;
+      }
 
-      &:hover {
-        color: $nav-link-active;
+      svg {
+        width: 20px;
+        height: 20px;
       }
     }
   }
