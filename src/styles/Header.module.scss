@@ -9,6 +9,12 @@
   top: 0;
   background-color: $black;
   z-index: 9999;
+  transition: transform 500ms ease-in-out;
+  transform: translate(0);
+
+  &.hide {
+    transform: translateY(-100%);
+  }
 }
 
 .brand {
