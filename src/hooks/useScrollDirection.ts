@@ -10,10 +10,16 @@ const useScrollDirection = () => {
   const [scrollDir, setScrollDir] = useState(Scrolling.UP)
 
   useEffect(() => {
+    let threshold = 75; // header height
     let lastScrollY = window.pageYOffset
 
     const updateScrollDir = () => {
       const scrollY = window.pageYOffset
+
+      if (scrollY < threshold) {
+        return
+      }
+
       setScrollDir(scrollY > lastScrollY ? Scrolling.DOWN : Scrolling.UP)
       lastScrollY = scrollY
     }
