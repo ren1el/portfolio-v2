@@ -5,7 +5,7 @@ export enum Scrolling {
   DOWN = "down"
 }
 
-// courtesy of https://stackoverflow.com/questions/62497110/detect-scroll-direction-in-react-js
+// https://stackoverflow.com/q/62497110
 const useScrollDirection = () => {
   const pageYOffsetThreshold = 75; // header height
   const [scrollDir, setScrollDir] = useState(Scrolling.UP)
