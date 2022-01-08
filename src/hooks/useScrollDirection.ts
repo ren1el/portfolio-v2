@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export enum Scrolling {
   UP = "up",
@@ -7,21 +7,24 @@ export enum Scrolling {
 
 // https://stackoverflow.com/q/62497110
 const useScrollDirection = () => {
-  const pageYOffsetThreshold = 75; // header height
   const [scrollDir, setScrollDir] = useState(Scrolling.UP)
+  const pageYOffsetThreshold = 75; // header height
+  const lastScrollY = useRef(0)
 
   useEffect(() => {
-    let lastScrollY = window.pageYOffset
+    if (typeof window === "undefined") {
+      return
+    }
 
     const updateScrollDir = () => {
       const scrollY = window.pageYOffset
 
-      if (scrollY < pageYOffsetThreshold) {
+      if (scrollY <= pageYOffsetThreshold) {
         return
       }
 
-      setScrollDir(scrollY > lastScrollY ? Scrolling.DOWN : Scrolling.UP)
-      lastScrollY = scrollY
+      setScrollDir(scrollY > lastScrollY.current ? Scrolling.DOWN : Scrolling.UP)
+      lastScrollY.current = scrollY
     }
 
     const onScroll = () => {
@@ -31,7 +34,7 @@ const useScrollDirection = () => {
     window.addEventListener('scroll', onScroll)
 
     return () => window.removeEventListener('scroll', onScroll)
-  }, [scrollDir])
+  }, [])
 
   return scrollDir
 }
