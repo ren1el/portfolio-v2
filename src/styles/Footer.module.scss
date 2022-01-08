@@ -1,7 +1,9 @@
 @import './variables.scss';
+@import './mixins.scss';
 
 .footerContainer {
   margin-top: 6em;
+  @include enterAnimation;
 }
 
 .headingContainer {

@@ -3,10 +3,19 @@ import profileImg from '../../public/images/me.png'
 import Image from 'next/image'
 import IconLinks from './IconLinks'
 import { socialIconLinks } from '../../contentConfig'
+import { useRef } from 'react'
+import useVisibility from '../hooks/useVisibility'
 
 const About = (): JSX.Element => {
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const isVisible = useVisibility(sectionRef)
+
   return (
-    <section className={'section'} id={'About'}>
+    <section
+      className={`section ${styles.transitionDelay} ${isVisible ? 'enter' : ''}`}
+      id={'About'}
+      ref={sectionRef}
+    >
       <aside className={`aside noBorder ${styles.aboutAside}`}>
         <div className={styles.headshotContainer}>
           <Image className={styles.headshot} src={profileImg} alt="Headshot" />

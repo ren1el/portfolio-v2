@@ -1,10 +1,18 @@
 import IconLinks from './IconLinks'
 import styles from '../styles/Footer.module.scss'
 import { socialIconLinks } from '../../contentConfig'
+import { useRef } from 'react'
+import useVisibility from '../hooks/useVisibility'
 
 const Footer = (): JSX.Element => {
+  const footerRef = useRef<HTMLElement | null>(null)
+  const isVisible = useVisibility(footerRef, 0.25)
+
   return (
-    <footer className={`container ${styles.footerContainer}`}>
+    <footer
+      className={`container ${styles.footerContainer} ${isVisible ? styles.enter : ''}`}
+      ref={footerRef}
+    >
       <div className={styles.headingContainer}>
         <h2 className={styles.heading}>Thanks for stopping by!</h2>
         <h2 className={styles.heading}>Something clever here probably.</h2>

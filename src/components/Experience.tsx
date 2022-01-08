@@ -1,9 +1,14 @@
+import { useRef } from 'react'
 import { education, experience } from '../../contentConfig'
+import useVisibility from '../hooks/useVisibility'
 import styles from '../styles/Experience.module.scss'
 
 const Experience = (): JSX.Element => {
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const isVisible = useVisibility(sectionRef, 0.25)
+
   return (
-    <section className={'section'} id={'Experience'}>
+    <section className={`section ${isVisible ? 'enter' : ''}`} id={'Experience'} ref={sectionRef}>
       <aside className={`aside`}>
         <h2 className={'sectionHeader'}>Experience</h2>
       </aside>

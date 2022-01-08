@@ -1,0 +1,36 @@
+@mixin fadeInAnimation {
+  opacity: 0;
+  visibility: none;
+  transition: opacity 700ms ease-in-out;
+
+  &.enter {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@mixin enterAnimation {
+  opacity: 0;
+  visibility: none;
+  transform: translateY(25px);
+  transition: opacity 700ms ease-in-out, transform 700ms ease-in-out;
+
+  &.enter {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@mixin listEnterAnimation {
+  opacity: 0;
+  visibility: none;
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+  transform: translateY(-10px);
+
+  &.itemEnter {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}

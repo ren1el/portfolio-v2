@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+.transitionDelay {
+  transition-delay: 500ms;
+}
+
 .aboutAside {
   order: 2;
   display: flex;

@@ -2,10 +2,15 @@ import styles from '../styles/FeaturedProjects.module.scss'
 import Image from 'next/image'
 import IconLinks from './IconLinks'
 import { featuredProjects } from '../../contentConfig'
+import useVisibility from '../hooks/useVisibility'
+import { useRef } from 'react'
 
 const FeaturedProjects = (): JSX.Element => {
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const isVisible = useVisibility(sectionRef, 0.25)
+
   return (
-    <section className={'section'} id={'Work'}>
+    <section className={`section ${isVisible ? 'enter' : ''}`} id={'Work'} ref={sectionRef}>
       <aside className={`aside`}>
         <h2 className={'sectionHeader'}>Featured Projects</h2>
       </aside>

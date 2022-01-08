@@ -1,5 +1,6 @@
 @import './fonts.css';
 @import './variables.scss';
+@import './mixins.scss';
 
 * {
   box-sizing: border-box;
@@ -74,6 +75,7 @@ ul {
   flex-direction: column;
   margin-bottom: 2em;
   scroll-margin: $header-height;
+  @include enterAnimation;
 
   .aside {
     width: 100%;

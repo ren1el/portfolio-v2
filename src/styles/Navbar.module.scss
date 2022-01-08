@@ -1,7 +1,9 @@
 @import './variables.scss';
+@import './mixins.scss';
 
 .nav {
   display: none;
+  @include fadeInAnimation;
 }
 
 .list {
@@ -14,6 +16,7 @@
   .item {
     color: $nav-link-inactive;
     margin-right: 5em;
+    @include listEnterAnimation;
 
     &.active {
       color: $nav-link-active;

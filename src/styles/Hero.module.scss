@@ -1,7 +1,13 @@
 @import './variables.scss';
+@import './mixins.scss';
 
 .container {
   padding: 2em 0 3em;
+  @include fadeInAnimation;
+
+  &.transitionDelay {
+    transition-delay: 1000ms;
+  }
 }
 
 .heading {
