@@ -18,6 +18,10 @@
     margin-right: 5em;
     @include listEnterAnimation;
 
+    &:last-child {
+      margin-right: 0;
+    }
+
     &.active {
       color: $nav-link-active;
     }
