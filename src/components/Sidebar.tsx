@@ -1,5 +1,9 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
+import useCurrentSection from '../hooks/useCurrentSection'
+import useVisibility from '../hooks/useVisibility'
 import styles from '../styles/Sidebar.module.scss'
+import { combineClasses } from '../utils/combineClasses'
+import { getItemColorClass } from './Navbar'
 
 type SidebarProps = {
   isSidebarOpen: boolean
@@ -7,9 +11,11 @@ type SidebarProps = {
 }
 
 const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps): JSX.Element => {
-  const [activeItem, setActiveItem] = useState(0)
+  const [hoveringItem, setHoveringItem] = useState(-1)
+  const [hasOpenClass, setHasOpenClass] = useState(false)
   const navRef = useRef<HTMLElement | null>(null)
   const labels = ['About', 'Work', 'Experience', 'Skills'] // TODO: get as static props
+  const currentSection = useCurrentSection()
 
   useEffect(() => {
     if (isSidebarOpen) {
@@ -45,6 +51,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps): JSX.Element
     } else {
       navRef.current?.classList.remove(styles.open)
     }
+    setHasOpenClass(shouldOpen)
   }
 
   return (
@@ -54,13 +61,25 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps): JSX.Element
           return (
             <li
               key={index}
-              className={`${styles.item} ${activeItem === index && styles.active}`}
+              className={combineClasses([
+                styles.item,
+                getItemColorClass(
+                  label,
+                  index,
+                  hoveringItem,
+                  currentSection,
+                  styles.active,
+                  styles.inactive
+                ),
+                hasOpenClass && styles.itemEnter,
+              ])}
               onMouseOver={() => {
-                setActiveItem(index)
+                setHoveringItem(index)
               }}
               onMouseOut={() => {
-                setActiveItem(0)
+                setHoveringItem(-1)
               }}
+              style={{ transitionDelay: `${100 * index}ms` }}
             >
               <a
                 href={label === 'About' ? '#' : `#${label}`}

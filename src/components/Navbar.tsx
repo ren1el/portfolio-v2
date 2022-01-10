@@ -8,17 +8,19 @@ export const getItemColorClass = (
   label: string,
   index: number,
   hoveringItem: number,
-  currentSection: Section
+  currentSection: Section,
+  activeStyle: string,
+  inactiveStyle: string
 ): string => {
   if (hoveringItem !== -1) {
     if (hoveringItem !== index) {
-      return styles.inactive
+      return inactiveStyle
     } else {
-      return styles.active
+      return activeStyle
     }
   } else {
     if (currentSection === label) {
-      return styles.active
+      return activeStyle
     } else {
       return ''
     }
@@ -41,7 +43,14 @@ const Navbar = (): JSX.Element => {
               key={index}
               className={combineClasses([
                 styles.item,
-                getItemColorClass(label, index, hoveringItem, currentSection),
+                getItemColorClass(
+                  label,
+                  index,
+                  hoveringItem,
+                  currentSection,
+                  styles.active,
+                  styles.inactive
+                ),
                 isVisible && styles.itemEnter,
               ])}
               onMouseOver={() => {

@@ -22,11 +22,11 @@
   }
 }
 
-@mixin listEnterAnimation {
+@mixin listEnterAnimation($translate: 10px, $fromAbove: true) {
   opacity: 0;
   visibility: none;
   transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
-  transform: translateY(-10px);
+  transform: translateY(if($fromAbove, -$translate, $translate));
 
   &.itemEnter {
     opacity: 1;

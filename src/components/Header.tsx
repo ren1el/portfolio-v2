@@ -37,7 +37,11 @@ const Header = ({ isSidebarOpen, setIsSidebarOpen }: HeaderProps): JSX.Element =
       >
         Contact
       </button>
-      <SidebarButton isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
+      <SidebarButton
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+        isHeaderVisible={isVisible}
+      />
     </header>
   )
 }

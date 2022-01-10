@@ -1,9 +1,15 @@
 @import './variables.scss';
+@import './mixins.scss';
 
 .button {
   padding: 15px 0 15px 15px;
   border: none;
   background-color: transparent;
+  @include fadeInAnimation;
+
+  &.transitionDelay {
+    transition-delay: 1400ms;
+  }
 
   .iconLine {
     display: block;

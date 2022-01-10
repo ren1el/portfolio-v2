@@ -3,7 +3,7 @@
 
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   height: $header-height;
   position: fixed;
@@ -19,7 +19,6 @@
 }
 
 .brand {
-  display: none;
   color: $text-secondary;
   font-weight: 500;
   @include fadeInAnimation;
@@ -39,14 +38,6 @@
 }
 
 @media (min-width: $container-width) {
-  .header {
-    justify-content: space-between;
-  }
-
-  .brand {
-    display: block;
-  }
-
   .contact {
     display: flex;
   }

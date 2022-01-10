@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './mixins.scss';
 
 .nav {
   position: fixed;
@@ -33,10 +34,23 @@
     .item {
       color: $nav-link-inactive;
       margin-bottom: 0.2em;
+      @include listEnterAnimation($translate: 25px, $fromAbove: false);
 
       &.active {
         color: $nav-link-active;
       }
+
+      &.inactive {
+        color: $nav-link-inactive;
+      }
+    }
+  }
+}
+
+@media (min-width: $bp-md) {
+  .nav {
+    .list {
+      font-size: 2rem;
     }
   }
 }
