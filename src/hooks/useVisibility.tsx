@@ -10,6 +10,10 @@ const useVisibility = (
   const wasVisibleRef = useRef(false)
 
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      return
+    }
+
     const getValidThreshold = (): number => {
       let validThreshold
 
