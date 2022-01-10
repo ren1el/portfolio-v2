@@ -9,7 +9,11 @@ const OtherProjects = (): JSX.Element => {
   const isVisible = useVisibility(sectionRef, 0.25)
 
   return (
-    <section className={`section ${isVisible ? 'enter' : ''}`} ref={sectionRef}>
+    <section
+      className={`section ${isVisible ? 'enter' : ''}`}
+      id={'OtherProjects'}
+      ref={sectionRef}
+    >
       <aside className={`aside`}>
         <h2 className={'sectionHeader'}>Other Projects</h2>
       </aside>

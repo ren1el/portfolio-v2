@@ -25,6 +25,10 @@
     &.active {
       color: $nav-link-active;
     }
+
+    &.inactive {
+      color: $nav-link-inactive;
+    }
   }
 }
 
