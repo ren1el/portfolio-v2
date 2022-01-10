@@ -6,7 +6,7 @@
   @include fadeInAnimation;
 
   &.transitionDelay {
-    transition-delay: 1000ms;
+    transition-delay: 500ms;
   }
 }
 
@@ -52,5 +52,9 @@
 @media (min-width: $container-width) {
   .container {
     padding: 5em 0 6em 400px;
+
+    &.transitionDelay {
+      transition-delay: 1000ms;
+    }
   }
 }

@@ -33,12 +33,12 @@
   @include fadeInAnimation;
 }
 
-.transitionDelay {
-  transition-delay: 1400ms;
-}
-
 @media (min-width: $container-width) {
   .contact {
     display: flex;
+  }
+
+  .transitionDelay {
+    transition-delay: 1400ms;
   }
 }

@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .transitionDelay {
-  transition-delay: 500ms;
+  transition-delay: 1000ms;
 }
 
 .aboutAside {
@@ -58,5 +58,11 @@
 
   .text {
     display: flex;
+  }
+}
+
+@media (min-width: $container-width) {
+  .transitionDelay {
+    transition-delay: 500ms;
   }
 }

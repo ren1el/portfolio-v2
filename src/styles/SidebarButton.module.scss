@@ -7,10 +7,6 @@
   background-color: transparent;
   @include fadeInAnimation;
 
-  &.transitionDelay {
-    transition-delay: 1400ms;
-  }
-
   .iconLine {
     display: block;
     width: 25px;

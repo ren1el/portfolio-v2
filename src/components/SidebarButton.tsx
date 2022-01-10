@@ -17,7 +17,7 @@ const SidebarButton = ({
       className={combineClasses([
         styles.button,
         isSidebarOpen && styles.open,
-        isHeaderVisible && `${styles.enter} ${styles.transitionDelay}`,
+        isHeaderVisible && styles.enter,
       ])}
       onClick={() => {
         setIsSidebarOpen(!isSidebarOpen)
