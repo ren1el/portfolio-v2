@@ -22,6 +22,7 @@ const SidebarButton = ({
       onClick={() => {
         setIsSidebarOpen(!isSidebarOpen)
       }}
+      aria-label={'Menu'}
     >
       <span className={`${styles.iconLine} ${styles.top}`} />
       <span className={`${styles.iconLine} ${styles.bottom}`} />

@@ -24,6 +24,7 @@ const IconLinks = ({ iconLinks }: IconLinksProps): JSX.Element => {
           className={styles.link}
           target={'_blank'}
           rel={'noreferrer'}
+          aria-label={`${link.name}`}
         >
           {link.name === 'LinkedIn' && <IconLinkedin />}
           {link.name === 'GitHub' && <IconGitHub />}
