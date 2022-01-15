@@ -15,7 +15,7 @@ const Footer = (): JSX.Element => {
     >
       <div className={styles.headingContainer}>
         <h2 className={styles.heading}>Thanks for stopping by!</h2>
-        <h2 className={styles.heading}>Something clever here probably.</h2>
+        <h2 className={styles.heading}>Salut, à bientôt !</h2>
       </div>
       <div className={styles.emailContainer}>
         <button className={styles.contact}>Email me</button>

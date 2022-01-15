@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { education, experience } from '../../contentConfig'
 import useVisibility from '../hooks/useVisibility'
 import styles from '../styles/Experience.module.scss'
+import { combineClasses } from '../utils/combineClasses'
 
 const Experience = (): JSX.Element => {
   const sectionRef = useRef<HTMLElement | null>(null)
@@ -17,7 +18,7 @@ const Experience = (): JSX.Element => {
           <h2 className={styles.title}>Education</h2>
           {education.map((item, index) => (
             <div key={index} className={styles.table}>
-              <div className={styles.leftColumn}>
+              <div className={combineClasses([styles.leftColumn, styles.education])}>
                 <span className={styles.heading}>{item.heading}</span>
               </div>
               <div className={styles.rightColumn}>{item.description}</div>
@@ -32,7 +33,15 @@ const Experience = (): JSX.Element => {
                 <span className={styles.heading}>{item.heading}</span>
                 {item.subheading}
               </div>
-              <div className={styles.rightColumn}>{item.description}</div>
+              <div className={styles.rightColumn}>
+                <ul className={styles.description}>
+                  {item.description.map((bullet, index) => (
+                    <li key={index} className={styles.bullet}>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

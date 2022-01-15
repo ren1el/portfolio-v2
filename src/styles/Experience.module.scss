@@ -27,6 +27,24 @@
       color: $text-secondary;
       font-weight: 500;
     }
+
+    .description {
+      margin: 0;
+      padding: 0;
+
+      .bullet {
+        padding-left: 1.5em;
+        margin-bottom: 1em;
+        list-style: none;
+        position: relative;
+
+        &::before {
+          content: '→';
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
   }
 }
 
@@ -42,7 +60,11 @@
       margin-bottom: 2.25em;
 
       .leftColumn {
-        margin-right: 25px;
+        margin-right: 0.0625em;
+
+        &.education {
+          margin-right: 1.5625em;
+        }
       }
     }
   }
@@ -52,7 +74,11 @@
   .subsection {
     .table {
       .leftColumn {
-        margin-right: 35px;
+        margin-right: 0.6875em;
+
+        &.education {
+          margin-right: 2.1875em;
+        }
       }
     }
   }

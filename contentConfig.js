@@ -83,7 +83,7 @@ export const otherProjects = [
     type: 'Class Project',
     title: 'Sleep Tracker',
     description: `A minimal, hybrid iOS/Android application that allows users to log overnight sleep and their
-        “sleepiness” throughout the day. Built with Ionic.`,
+      “sleepiness” throughout the day. Built with Ionic.`,
     iconLinks: [
       {
         name: 'GitHub',
@@ -95,7 +95,7 @@ export const otherProjects = [
     type: 'Side Project',
     title: 'E-commerce Landing Page Concept',
     description: `A responsive e-commerce landing page that mimics online fashion product websites, exercising
-        my ability to use pure HTML/CSS/JavaScript to apply professional design qualities.`,
+      my ability to use pure HTML/CSS/JavaScript to apply professional design qualities.`,
     iconLinks: [
       {
         name: 'GitHub',
@@ -110,8 +110,8 @@ export const otherProjects = [
   {
     type: 'Interview Project',
     title: 'Dogs.ai',
-    description: `Mauris gravida pharetra metus, quis porttitor quam luctus et. Cras vestibulum
-        consectetur turpis a venenatis. Vivamus et placerat diam, et mollis neque.`,
+    description: `A small project I did for an interview that exercised my ability to use CSS grid and API fetching
+      to create an infinitely scrollable gallery of dog pictures!`,
     iconLinks: [
       {
         name: 'GitHub',
@@ -122,8 +122,8 @@ export const otherProjects = [
   {
     type: 'Interview Project',
     title: 'Calendar.ai',
-    description: `Donec in ultrices augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Vestibulum at nibh quis libero vulputate varius.`,
+    description: `A lightweight calendar app to schedule and edit appointments. Instead of importing a library, I made use
+      of the JavaScript date object to create my own fully functional calendar component.`,
     iconLinks: [
       {
         name: 'GitHub',
@@ -144,23 +144,31 @@ export const experience = [
   {
     heading: 'Multi Media, LLC',
     subheading: 'Software Engineer',
-    description: `Etiam vitae ipsum congue, lobortis massa a, suscipit metus. Duis auctor mattis felis
-        quis ultrices. Suspendisse eu laoreet nunc. Proin orci urna, congue ac turpis
-        fermentum, porta suscipit risus.`,
+    description: [
+      `Worked on significant feature development (from planning to implementing) for a large video streaming service.`,
+      `Implemented the redesign of the most trafficked user-facing page of the mobile website using TypeScript and Django.`,
+      `Documented many of the frontend codebase tools and designed best coding practices for current and onboarding developers.`,
+    ],
   },
   {
     heading: 'UC Irvine UROP',
     subheading: 'Research Assistant',
-    description: `Donec in ultrices augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Vestibulum at nibh quis libero vulputate varius. Nulla condimentum felis sit amet erat
-        viverra, eu scelerisque tellus fermentum.`,
+    description: [
+      `Developed a children’s voice game as an Amazon Alexa skill in Node.js, overseeing development improvements
+      and being responsible for implementing new features.`,
+      `Refactored the existing codebase, reducing technical debt and greatly increasing performance.`,
+      `Collaborated with an agile team to research children’s interactions between voice
+      assistants and voice apps, earning a feature under the UC Irvine 2020 Undergraduate Research Spotlight.`,
+    ],
   },
   {
     heading: 'UC Irvine ICS',
     subheading: 'Python Tutor',
-    description: `Mauris gravida pharetra metus, quis porttitor quam luctus et. Cras vestibulum
-        consectetur turpis a venenatis. Vivamus et placerat diam, et mollis neque. Donec diam
-        eros, porta efficitur sem ac, elementum lobortis massa.`,
+    description: [
+      `Tutored a class of 40 students in the Introduction to Programming lab course at UC Irvine.`,
+      `Answered student questions related to Python and programming fundamentals.`,
+      `Received “Highly Effective” evaluations in helping understand and communicate concepts.`,
+    ],
   },
 ]
 

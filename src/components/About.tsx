@@ -29,36 +29,36 @@ const About = (): JSX.Element => {
         <div className={styles.text}>
           <div className={styles.firstSection}>
             <p>
-              Sed interdum id quam et efficitur. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Quisque imperdiet ultrices tellus, nec tristique nisi laoreet et. Nullam semper
-              congue ex vitae lobortis.
+              Howdy! I’m Reniel (pronounced reh-neel) and I’m currently a software engineer at{' '}
+              <strong>Multi Media LLC</strong>, where I develop projects and interfaces related to
+              live streaming and chat experiences that are enjoyed by millions of users.
             </p>
             <p>
-              Sed interdum id quam et efficitur. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Quisque imperdiet ultrices tellus, nec tristique nisi laoreet et. Nullam semper
-              congue ex vitae lobortis.
+              I attribute my start into programming when I began coding static HTML pages on
+              Neopets. I’ve since developed my interests in <strong>web development</strong>,{' '}
+              <strong>graphic design</strong>, and <strong>application architecture</strong>.
             </p>
             <p>
-              Vivamus quis mollis magna. Nulla vel mi eros. Class aptent taciti sociosqu ad litora
-              torquent per conubia nostra, per inceptos himenaeos. Nam efficitur nisl ac ex mollis,
-              tincidunt accumsan lacus ultricies.
+              I enjoy bridging the gap between engineering and design, and try to make sure that the
+              applications I work on are not only maintanable and efficient, but also look and feel
+              good to use.
             </p>
           </div>
           <div>
             <p>
-              Mauris gravida pharetra metus, quis porttitor quam luctus et. Cras vestibulum
-              consectetur turpis a venenatis. Vivamus et placerat diam, et mollis neque. Donec diam
-              eros, porta efficitur sem ac, elementum lobortis massa.
+              I’m currently based in southern California after having graduated from the University
+              of California, Irvine. Apart from the title of engineer, I’ve also been a researcher,
+              a tutor, a freelancer, and am always looking for opportunities to expand my skillset.
             </p>
             <p>
-              Nullam molestie leo convallis, congue ex vel, tempus lectus. Donec in ultrices augue.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at nibh quis
-              libero vulputate varius.
+              Aside from doing computer-y things, I enjoy attending live concerts, eating a good
+              bowl of poke, and I’m also currently learning French!{' '}
+              <em>Petit a petit, l’oiseau fait son nid.</em>
             </p>
             <p>
-              Nullam molestie leo convallis, congue ex vel, tempus lectus. Donec in ultrices augue.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at nibh quis
-              libero vulputate varius.
+              If you’ve made it this far, feel free to scroll around and learn more about my
+              background. If you have any questions, comments, or want to work with me in any
+              capacity, email me! <strong>→ contact@renielocampo.com</strong>
             </p>
           </div>
         </div>
