@@ -83,7 +83,7 @@
   }
 }
 
-@media (min-width: 1180px) {
+@media (min-width: $bp-lg) {
   .projectCard {
     display: flex;
     flex-direction: row;
