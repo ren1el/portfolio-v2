@@ -58,7 +58,13 @@ const About = (): JSX.Element => {
             <p>
               If you’ve made it this far, feel free to scroll around and learn more about my
               background. If you have any questions, comments, or want to work with me in any
-              capacity, email me! <strong>→ contact@renielocampo.com</strong>
+              capacity, email me!{' '}
+              <strong>
+                →{' '}
+                <a href="mailto:contact@renielocampo.com" className={'animated'}>
+                  contact@renielocampo.com
+                </a>
+              </strong>
             </p>
           </div>
         </div>
