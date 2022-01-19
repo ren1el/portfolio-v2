@@ -3,10 +3,12 @@ import profileImg from '../../public/images/me.png'
 import Image from 'next/image'
 import IconLinks from './IconLinks'
 import { socialIconLinks } from '../../contentConfig'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import useVisibility from '../hooks/useVisibility'
+import { combineClasses } from '../utils/combineClasses'
 
 const About = (): JSX.Element => {
+  const [wasReadMorePressed, setWasReadMorePressed] = useState(false)
   const sectionRef = useRef<HTMLElement | null>(null)
   const isVisible = useVisibility(sectionRef)
 
@@ -44,7 +46,9 @@ const About = (): JSX.Element => {
               good to use.
             </p>
           </div>
-          <div>
+          <div
+            className={combineClasses([styles.secondSection, wasReadMorePressed && styles.display])}
+          >
             <p>
               I’m currently based in southern California after having graduated from the University
               of California, Irvine. Apart from the title of engineer, I’ve also been a researcher,
@@ -66,6 +70,16 @@ const About = (): JSX.Element => {
                 </a>
               </strong>
             </p>
+          </div>
+          <div className={styles.readMoreContainer}>
+            <button
+              className={styles.readMore}
+              onClick={() => {
+                setWasReadMorePressed(!wasReadMorePressed)
+              }}
+            >
+              {wasReadMorePressed ? 'Read Less' : 'Read More'}
+            </button>
           </div>
         </div>
       </div>

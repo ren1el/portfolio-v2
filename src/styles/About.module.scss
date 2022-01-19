@@ -34,6 +34,27 @@
   border-top: 1px solid $white;
   order: 1;
 
+  .readMoreContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .readMore {
+    background-color: transparent;
+    color: $text-secondary;
+    margin: 0 2em 2.25em 0;
+    font-weight: 500;
+  }
+
+  .secondSection {
+    display: none;
+
+    &.display {
+      display: block;
+    }
+  }
+
   & div {
     flex: 1;
   }
@@ -53,6 +74,18 @@
   .aboutContent {
     .firstSection {
       margin-right: 1.5em;
+    }
+
+    .readMoreContainer {
+      display: none;
+    }
+
+    .secondSection {
+      display: block;
+
+      &.display {
+        display: block;
+      }
     }
   }
 
