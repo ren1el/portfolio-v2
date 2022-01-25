@@ -20,7 +20,7 @@ const About = (): JSX.Element => {
     >
       <aside className={`aside noBorder ${styles.aboutAside}`}>
         <div className={styles.headshotContainer}>
-          <Image className={styles.headshot} src={profileImg} alt="Headshot" priority />
+          <Image src={profileImg} alt="Headshot" priority />
         </div>
         <div className={styles.socials}>
           <IconLinks iconLinks={socialIconLinks} />
