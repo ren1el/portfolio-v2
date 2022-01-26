@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           property="og:description"
           content="Reniel Ocampo — I’m a software engineer that likes to design and build clean web experiences. Currently based in Southern California."
         />
-        <meta property="og:image" content="/images/thumbnail.png" />
+        <meta property="og:image" content="https://renielocampo.com/images/thumbnail.png" />
         <meta property="og:url" content="https://renielocampo.com" />
         <meta property="og:site_name" content="Reniel Ocampo" />
 
