@@ -61,7 +61,7 @@ const Navbar = (): JSX.Element => {
               }}
               style={{ transitionDelay: `${100 * index}ms` }}
             >
-              <a href={label === 'About' ? '#' : `#${label}`}>{label}</a>
+              <a href={label === 'About' ? '/#' : `/#${label}`}>{label}</a>
             </li>
           )
         })}

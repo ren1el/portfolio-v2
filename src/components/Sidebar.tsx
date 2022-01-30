@@ -82,7 +82,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps): JSX.Element
               style={{ transitionDelay: `${100 * index}ms` }}
             >
               <a
-                href={label === 'About' ? '#' : `#${label}`}
+                href={label === 'About' ? '/#' : `/#${label}`}
                 onClick={() => {
                   setIsSidebarOpen(!isSidebarOpen)
                 }}
