@@ -1,5 +1,5 @@
 import styles from '../styles/SidebarButton.module.scss'
-import { combineClasses } from '../utils/combineClasses'
+import { combineClasses, getEnterAnimationClasses } from '../utils/classUtils'
 
 type SidebarButtonProps = {
   isSidebarOpen: boolean
@@ -17,7 +17,7 @@ const SidebarButton = ({
       className={combineClasses([
         styles.button,
         isSidebarOpen && styles.open,
-        isHeaderVisible && styles.enter,
+        getEnterAnimationClasses(styles, isHeaderVisible),
       ])}
       onClick={() => {
         setIsSidebarOpen(!isSidebarOpen)

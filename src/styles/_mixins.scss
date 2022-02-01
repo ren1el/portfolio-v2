@@ -1,7 +1,10 @@
-@mixin fadeInAnimation {
-  opacity: 0;
-  visibility: none;
-  transition: opacity 700ms ease-in-out;
+@mixin fadeInAnimation($transitionDelay: 0) {
+  &.start {
+    opacity: 0;
+    visibility: none;
+    transition: opacity 700ms ease-in-out;
+    transition-delay: $transitionDelay;
+  }
 
   &.enter {
     opacity: 1;
@@ -23,12 +26,14 @@
 }
 
 @mixin listEnterAnimation($translate: 10px, $fromAbove: true) {
-  opacity: 0;
-  visibility: none;
-  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
-  transform: translateY(if($fromAbove, -$translate, $translate));
+  &.start {
+    opacity: 0;
+    visibility: none;
+    transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+    transform: translateY(if($fromAbove, -$translate, $translate));
+  }
 
-  &.itemEnter {
+  &.enter {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);

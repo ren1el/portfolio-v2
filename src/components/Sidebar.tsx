@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import useCurrentSection from '../hooks/useCurrentSection'
 import useVisibility from '../hooks/useVisibility'
 import styles from '../styles/Sidebar.module.scss'
-import { combineClasses } from '../utils/combineClasses'
+import { combineClasses, getEnterAnimationClasses } from '../utils/classUtils'
 import { getItemColorClass } from './Navbar'
 
 type SidebarProps = {
@@ -63,6 +63,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps): JSX.Element
               key={index}
               className={combineClasses([
                 styles.item,
+                getEnterAnimationClasses(styles, hasOpenClass),
                 getItemColorClass(
                   label,
                   index,
@@ -71,7 +72,6 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps): JSX.Element
                   styles.active,
                   styles.inactive
                 ),
-                hasOpenClass && styles.itemEnter,
               ])}
               onMouseOver={() => {
                 setHoveringItem(index)

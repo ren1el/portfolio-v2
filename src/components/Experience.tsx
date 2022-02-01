@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { education, experience } from '../../contentConfig'
 import useVisibility from '../hooks/useVisibility'
 import styles from '../styles/Experience.module.scss'
-import { combineClasses } from '../utils/combineClasses'
+import { combineClasses } from '../utils/classUtils'
 
 const Experience = (): JSX.Element => {
   const sectionRef = useRef<HTMLElement | null>(null)

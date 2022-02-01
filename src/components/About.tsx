@@ -5,7 +5,7 @@ import IconLinks from './IconLinks'
 import { socialIconLinks } from '../../contentConfig'
 import { useRef, useState } from 'react'
 import useVisibility from '../hooks/useVisibility'
-import { combineClasses } from '../utils/combineClasses'
+import { combineClasses } from '../utils/classUtils'
 
 const About = (): JSX.Element => {
   const [wasReadMorePressed, setWasReadMorePressed] = useState(false)

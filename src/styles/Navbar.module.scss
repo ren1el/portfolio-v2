@@ -3,7 +3,6 @@
 
 .nav {
   display: none;
-  @include fadeInAnimation;
 }
 
 .list {
@@ -35,5 +34,6 @@
 @media (min-width: $container-width) {
   .nav {
     display: block;
+    @include fadeInAnimation;
   }
 }

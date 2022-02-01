@@ -21,7 +21,6 @@
 .brand {
   color: $text-secondary;
   font-weight: 500;
-  @include fadeInAnimation;
 }
 
 .contact {
@@ -30,6 +29,10 @@
   display: none;
   justify-content: center;
   align-items: center;
+}
+
+.brand,
+.contact {
   @include fadeInAnimation;
 }
 
@@ -38,7 +41,8 @@
     display: flex;
   }
 
-  .transitionDelay {
-    transition-delay: 1400ms;
+  .brand,
+  .contact {
+    @include fadeInAnimation(1400ms);
   }
 }

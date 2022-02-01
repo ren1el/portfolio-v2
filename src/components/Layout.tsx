@@ -6,9 +6,15 @@ import Sidebar from './Sidebar'
 
 type LayoutProps = {
   children: React.ReactNode
+  showAnimations?: boolean
+  showFooter?: boolean
 }
 
-const Layout = ({ children }: LayoutProps): JSX.Element => {
+const Layout = ({
+  children,
+  showAnimations = true,
+  showFooter = true,
+}: LayoutProps): JSX.Element => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   useEffect(() => {
@@ -21,10 +27,14 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 
   return (
     <>
-      <Header isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
+      <Header
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+        showAnimations={showAnimations}
+      />
       <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
       <main className={`container ${styles.mainContainer}`}>{children}</main>
-      <Footer />
+      {showFooter && <Footer />}
     </>
   )
 }

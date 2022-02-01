@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import useCurrentSection, { Section } from '../hooks/useCurrentSection'
 import useVisibility from '../hooks/useVisibility'
 import styles from '../styles/Navbar.module.scss'
-import { combineClasses } from '../utils/combineClasses'
+import { combineClasses, getEnterAnimationClasses } from '../utils/classUtils'
 
 export const getItemColorClass = (
   label: string,
@@ -27,7 +27,11 @@ export const getItemColorClass = (
   }
 }
 
-const Navbar = (): JSX.Element => {
+type NavbarProps = {
+  showAnimations?: boolean
+}
+
+const Navbar = ({ showAnimations = true }: NavbarProps): JSX.Element => {
   const [hoveringItem, setHoveringItem] = useState(-1)
   const labels = ['About', 'Work', 'Experience', 'Skills'] // TODO: get as static props
   const navRef = useRef<HTMLElement | null>(null)
@@ -43,6 +47,7 @@ const Navbar = (): JSX.Element => {
               key={index}
               className={combineClasses([
                 styles.item,
+                showAnimations && getEnterAnimationClasses(styles, isVisible),
                 getItemColorClass(
                   label,
                   index,
@@ -51,7 +56,6 @@ const Navbar = (): JSX.Element => {
                   styles.active,
                   styles.inactive
                 ),
-                isVisible && styles.itemEnter,
               ])}
               onMouseOver={() => {
                 setHoveringItem(index)

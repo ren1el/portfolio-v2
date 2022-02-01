@@ -3,11 +3,7 @@
 
 .container {
   padding: 2em 0 3em;
-  @include fadeInAnimation;
-
-  &.transitionDelay {
-    transition-delay: 500ms;
-  }
+  @include fadeInAnimation(500ms);
 }
 
 .heading {
@@ -53,9 +49,6 @@
 @media (min-width: $container-width) {
   .container {
     padding: 5em 0 6em 400px;
-
-    &.transitionDelay {
-      transition-delay: 1000ms;
-    }
+    @include fadeInAnimation(1000ms);
   }
 }
