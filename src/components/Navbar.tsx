@@ -63,7 +63,7 @@ const Navbar = ({ showAnimations = true }: NavbarProps): JSX.Element => {
               onMouseOut={() => {
                 setHoveringItem(-1)
               }}
-              style={{ transitionDelay: `${100 * index}ms` }}
+              style={showAnimations ? { transitionDelay: `${100 * index}ms` } : {}}
             >
               <a href={label === 'About' ? '/#' : `/#${label}`}>{label}</a>
             </li>
