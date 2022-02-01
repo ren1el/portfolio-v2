@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .container {
   display: flex;
   flex-direction: column;
@@ -7,14 +9,33 @@
 }
 
 .fourOFour {
-  font-size: 10rem;
+  font-size: 7rem;
   font-weight: 500;
   letter-spacing: 0.5rem;
-  margin: 1em 0 0.15em 0;
+  margin: 0.5em 0 0.15em 0;
   line-height: 10rem;
 }
 
 .subtext {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: 0;
+  text-align: center;
+}
+
+@media (min-width: $bp-md) {
+  .fourOFour {
+    font-size: 8rem;
+    margin: 0.75em 0 0.15em 0;
+  }
+}
+
+@media (min-width: $container-width) {
+  .fourOFour {
+    font-size: 10rem;
+    margin: 1em 0 0.15em 0;
+  }
+
+  .subtext {
+    font-size: 1.5rem;
+  }
 }
