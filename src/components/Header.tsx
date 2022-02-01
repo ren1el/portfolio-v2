@@ -36,7 +36,7 @@ const Header = ({
           showAnimations && getEnterAnimationClasses(styles, isVisible),
         ])}
       >
-        Reniel Ocampo
+        <a href={'/'}>Reniel Ocampo</a>
       </div>
       <Navbar showAnimations={showAnimations} />
       <button
