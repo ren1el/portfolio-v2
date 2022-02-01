@@ -12,8 +12,8 @@ const Hero = (): JSX.Element => {
       className={combineClasses([styles.container, getEnterAnimationClasses(styles, isVisible)])}
       ref={containerRef}
     >
-      <h1 className={styles.heading}>Reniel Ocampo.</h1>
-      <h1 className={styles.heading}>Software Engineer.</h1>
+      <h1 className={styles.heading}>Reniel Ocampo</h1>
+      <h2 className={styles.heading}>Software Engineer</h2>
     </div>
   )
 }
