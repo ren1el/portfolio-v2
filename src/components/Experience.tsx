@@ -9,8 +9,12 @@ const Experience = (): JSX.Element => {
   const isVisible = useVisibility(sectionRef, 0.25)
 
   return (
-    <section className={`section ${isVisible ? 'enter' : ''}`} id={'Experience'} ref={sectionRef}>
-      <aside className={`aside`}>
+    <section
+      id={'Experience'}
+      className={combineClasses(['section', isVisible && 'enter'])}
+      ref={sectionRef}
+    >
+      <aside className={'aside'}>
         <h2 className={'sectionHeader'}>Experience</h2>
       </aside>
       <div className={'content'}>

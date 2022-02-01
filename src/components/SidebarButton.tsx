@@ -24,8 +24,8 @@ const SidebarButton = ({
       }}
       aria-label={'Menu'}
     >
-      <span className={`${styles.iconLine} ${styles.top}`} />
-      <span className={`${styles.iconLine} ${styles.bottom}`} />
+      <span className={combineClasses([styles.iconLine, styles.top])} />
+      <span className={combineClasses([styles.iconLine, styles.bottom])} />
     </button>
   )
 }

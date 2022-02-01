@@ -3,6 +3,7 @@ import styles from '../styles/Footer.module.scss'
 import { socialIconLinks } from '../../contentConfig'
 import { useRef } from 'react'
 import useVisibility from '../hooks/useVisibility'
+import { combineClasses } from '../utils/classUtils'
 
 const Footer = (): JSX.Element => {
   const footerRef = useRef<HTMLElement | null>(null)
@@ -10,7 +11,7 @@ const Footer = (): JSX.Element => {
 
   return (
     <footer
-      className={`container ${styles.footerContainer} ${isVisible ? styles.enter : ''}`}
+      className={combineClasses(['container', styles.footerContainer, isVisible && styles.enter])}
       ref={footerRef}
     >
       <div className={styles.headingContainer}>

@@ -3,6 +3,7 @@ import Header from './Header'
 import styles from '../styles/Layout.module.scss'
 import { useEffect, useState } from 'react'
 import Sidebar from './Sidebar'
+import { combineClasses } from '../utils/classUtils'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -33,7 +34,7 @@ const Layout = ({
         showAnimations={showAnimations}
       />
       <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
-      <main className={`container ${styles.mainContainer}`}>{children}</main>
+      <main className={combineClasses(['container', styles.mainContainer])}>{children}</main>
       {showFooter && <Footer />}
     </>
   )

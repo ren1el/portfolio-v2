@@ -14,11 +14,11 @@ const About = (): JSX.Element => {
 
   return (
     <section
-      className={`section ${styles.transitionDelay} ${isVisible ? 'enter' : ''}`}
+      className={combineClasses(['section', styles.transitionDelay, isVisible && 'enter'])}
       id={'About'}
       ref={sectionRef}
     >
-      <aside className={`aside noBorder ${styles.aboutAside}`}>
+      <aside className={combineClasses(['aside', 'noBorder', styles.aboutAside])}>
         <div className={styles.headshotContainer}>
           <Image src={profileImg} alt="Headshot" priority />
         </div>
@@ -26,7 +26,7 @@ const About = (): JSX.Element => {
           <IconLinks iconLinks={socialIconLinks} />
         </div>
       </aside>
-      <div className={`content ${styles.aboutContent}`}>
+      <div className={combineClasses(['content', styles.aboutContent])}>
         <h2 className={'sectionHeader'}>About</h2>
         <div className={styles.text}>
           <div className={styles.firstSection}>

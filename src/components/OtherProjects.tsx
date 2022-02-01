@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { otherProjects } from '../../contentConfig'
 import useVisibility from '../hooks/useVisibility'
 import styles from '../styles/OtherProjects.module.scss'
+import { combineClasses } from '../utils/classUtils'
 import IconLinks from './IconLinks'
 
 const OtherProjects = (): JSX.Element => {
@@ -10,11 +11,11 @@ const OtherProjects = (): JSX.Element => {
 
   return (
     <section
-      className={`section ${isVisible ? 'enter' : ''}`}
       id={'OtherProjects'}
+      className={combineClasses(['section', isVisible && 'enter'])}
       ref={sectionRef}
     >
-      <aside className={`aside`}>
+      <aside className={'aside'}>
         <h2 className={'sectionHeader'}>Other Projects</h2>
       </aside>
       <div className={'content'}>
