@@ -1,8 +1,6 @@
 import Footer from './Footer'
 import Header from './Header'
 import styles from '../styles/Layout.module.scss'
-import { useEffect, useState } from 'react'
-import Sidebar from './Sidebar'
 import { combineClasses } from '../utils/classUtils'
 
 type LayoutProps = {

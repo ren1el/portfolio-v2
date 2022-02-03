@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import useCurrentSection from '../hooks/useCurrentSection'
-import useVisibility from '../hooks/useVisibility'
 import styles from '../styles/Sidebar.module.scss'
 import { combineClasses, getEnterAnimationClasses } from '../utils/classUtils'
 import { getItemColorClass } from './Navbar'
