@@ -16,24 +16,9 @@ const Layout = ({
   showAnimations = true,
   showFooter = true,
 }: LayoutProps): JSX.Element => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-
-  useEffect(() => {
-    if (isSidebarOpen) {
-      document.body.classList.add('noScroll')
-    } else {
-      document.body.classList.remove('noScroll')
-    }
-  }, [isSidebarOpen])
-
   return (
     <>
-      <Header
-        isSidebarOpen={isSidebarOpen}
-        setIsSidebarOpen={setIsSidebarOpen}
-        showAnimations={showAnimations}
-      />
-      <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
+      <Header showAnimations={showAnimations} />
       <main className={combineClasses(['container', styles.mainContainer])}>{children}</main>
       {showFooter && <Footer />}
     </>

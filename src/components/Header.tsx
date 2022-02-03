@@ -1,58 +1,69 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import useCurrentSection, { Section } from '../hooks/useCurrentSection'
 import useScrollDirection, { Scrolling } from '../hooks/useScrollDirection'
 import useVisibility from '../hooks/useVisibility'
 import styles from '../styles/Header.module.scss'
 import { combineClasses, getEnterAnimationClasses } from '../utils/classUtils'
 import Navbar from './Navbar'
+import Sidebar from './Sidebar'
 import SidebarButton from './SidebarButton'
 
 type HeaderProps = {
-  isSidebarOpen: boolean
-  setIsSidebarOpen: (val: boolean) => void
   showAnimations?: boolean
 }
 
-const Header = ({
-  isSidebarOpen,
-  setIsSidebarOpen,
-  showAnimations = true,
-}: HeaderProps): JSX.Element => {
+const Header = ({ showAnimations = true }: HeaderProps): JSX.Element => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const scrollDirection = useScrollDirection()
   const headerRef = useRef<HTMLElement | null>(null)
   const isVisible = useVisibility(headerRef)
+  const currentSection = useCurrentSection()
+  const shouldShowFadeAnimations = showAnimations && currentSection === Section.About
+
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.classList.add('noScroll')
+    } else {
+      document.body.classList.remove('noScroll')
+    }
+  }, [isSidebarOpen])
 
   return (
-    <header
-      className={combineClasses([
-        'container',
-        styles.header,
-        showAnimations && scrollDirection === Scrolling.DOWN && styles.hide,
-      ])}
-      ref={headerRef}
-    >
-      <div
+    <>
+      <header
         className={combineClasses([
-          styles.brand,
-          showAnimations && getEnterAnimationClasses(styles, isVisible),
+          'container',
+          styles.header,
+          showAnimations && scrollDirection === Scrolling.DOWN && styles.hide,
         ])}
+        ref={headerRef}
       >
-        <a href={'/'}>Reniel Ocampo</a>
-      </div>
-      <Navbar showAnimations={showAnimations} />
-      <button
-        className={combineClasses([
-          styles.contact,
-          showAnimations && getEnterAnimationClasses(styles, isVisible),
-        ])}
-      >
-        Contact
-      </button>
-      <SidebarButton
-        isSidebarOpen={isSidebarOpen}
-        setIsSidebarOpen={setIsSidebarOpen}
-        isHeaderVisible={isVisible}
-      />
-    </header>
+        <div
+          className={combineClasses([
+            styles.brand,
+            shouldShowFadeAnimations && getEnterAnimationClasses(styles, isVisible),
+          ])}
+        >
+          <a href={'/'}>Reniel Ocampo</a>
+        </div>
+        <Navbar showAnimations={shouldShowFadeAnimations} />
+        <button
+          className={combineClasses([
+            styles.contact,
+            shouldShowFadeAnimations && getEnterAnimationClasses(styles, isVisible),
+          ])}
+        >
+          Contact
+        </button>
+        <SidebarButton
+          isSidebarOpen={isSidebarOpen}
+          setIsSidebarOpen={setIsSidebarOpen}
+          isHeaderVisible={isVisible}
+          showAnimations={shouldShowFadeAnimations}
+        />
+      </header>
+      <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
+    </>
   )
 }
 

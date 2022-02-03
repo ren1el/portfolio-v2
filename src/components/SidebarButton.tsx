@@ -5,19 +5,21 @@ type SidebarButtonProps = {
   isSidebarOpen: boolean
   setIsSidebarOpen: (val: boolean) => void
   isHeaderVisible: boolean
+  showAnimations: boolean
 }
 
 const SidebarButton = ({
   isSidebarOpen,
   setIsSidebarOpen,
   isHeaderVisible,
+  showAnimations,
 }: SidebarButtonProps): JSX.Element => {
   return (
     <button
       className={combineClasses([
         styles.button,
         isSidebarOpen && styles.open,
-        getEnterAnimationClasses(styles, isHeaderVisible),
+        showAnimations && getEnterAnimationClasses(styles, isHeaderVisible),
       ])}
       onClick={() => {
         setIsSidebarOpen(!isSidebarOpen)
