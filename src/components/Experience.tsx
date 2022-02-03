@@ -39,7 +39,7 @@ const Experience = (): JSX.Element => {
               </div>
               <div className={styles.rightColumn}>
                 <ul className={styles.description}>
-                  {item.description.map((bullet, index) => (
+                  {item.descriptionPoints.map((bullet, index) => (
                     <li key={index} className={styles.bullet}>
                       {bullet}
                     </li>

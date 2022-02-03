@@ -20,10 +20,10 @@ const Skills = (): JSX.Element => {
       <div className={combineClasses(['content', styles.skillsContent])}>
         {skills.map((skill, index) => (
           <div key={index}>
-            <h3 className={styles.skillTitle}>{skill.title}</h3>
+            <h3 className={styles.skillTitle}>{skill.type}</h3>
             <ul className={styles.skillList}>
-              {skill.skillList.map((skill, index) => (
-                <li key={index}>{skill}</li>
+              {skill.tools.map((tool, index) => (
+                <li key={index}>{tool}</li>
               ))}
             </ul>
           </div>

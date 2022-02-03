@@ -2,7 +2,12 @@ import clayformee from './public/images/projects/clayformee.png'
 import animalActions from './public/images/projects/animal-actions.png'
 import zyllabi from './public/images/projects/zyllabi.png'
 
-export const socialIconLinks = [
+type IconLink = {
+  name: string
+  link: string
+}
+
+export const socialIconLinks: IconLink[] = [
   {
     name: 'LinkedIn',
     link: 'https://linkedin.com/in/renielocampo',
@@ -21,7 +26,21 @@ export const socialIconLinks = [
   },
 ]
 
-export const featuredProjects = [
+type Project = {
+  title: string
+  description: string
+  iconLinks?: IconLink[]
+}
+
+type FeaturedProject = Project & {
+  imgSrc: StaticImageData
+}
+
+type NonFeaturedProject = Project & {
+  type: string
+}
+
+export const featuredProjects: FeaturedProject[] = [
   {
     title: 'Clayformee',
     description: `A mobile-first e-commerce website for a client’s clay earring business. Faced with a number
@@ -62,7 +81,7 @@ export const featuredProjects = [
   },
 ]
 
-export const otherProjects = [
+export const otherProjects: NonFeaturedProject[] = [
   {
     type: 'Side Project',
     title: 'Personal Website V1',
@@ -133,18 +152,29 @@ export const otherProjects = [
   },
 ]
 
-export const education = [
+type Education = {
+  heading: string
+  description: string
+}
+
+type WorkExperience = {
+  heading: string
+  subheading: string
+  descriptionPoints: string[]
+}
+
+export const education: Education[] = [
   {
     heading: 'University of California, Irvine',
     description: 'B.S. Computer Science with a specialization in systems and software',
   },
 ]
 
-export const experience = [
+export const experience: WorkExperience[] = [
   {
     heading: 'Multi Media, LLC',
     subheading: 'Software Engineer',
-    description: [
+    descriptionPoints: [
       `Worked on significant feature development (from planning to implementing) for a large video streaming service.`,
       `Implemented the redesign of the most trafficked user-facing page of the mobile website using TypeScript and Django.`,
       `Documented many of the frontend codebase tools and designed best coding practices for current and onboarding developers.`,
@@ -153,7 +183,7 @@ export const experience = [
   {
     heading: 'UC Irvine UROP',
     subheading: 'Research Assistant',
-    description: [
+    descriptionPoints: [
       `Developed a children’s voice game as an Amazon Alexa skill in Node.js, overseeing development improvements
       and being responsible for implementing new features.`,
       `Refactored the existing codebase, reducing technical debt and greatly increasing performance.`,
@@ -164,7 +194,7 @@ export const experience = [
   {
     heading: 'UC Irvine ICS',
     subheading: 'Python Tutor',
-    description: [
+    descriptionPoints: [
       `Tutored a class of 40 students in the Introduction to Programming lab course at UC Irvine.`,
       `Answered student questions related to Python and programming fundamentals.`,
       `Received “Highly Effective” evaluations in helping understand and communicate concepts.`,
@@ -172,21 +202,26 @@ export const experience = [
   },
 ]
 
-export const skills = [
+type Skill = {
+  type: string
+  tools: string[]
+}
+
+export const skills: Skill[] = [
   {
-    title: 'Languages',
-    skillList: ['JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Python', 'Java', 'SQL'],
+    type: 'Languages',
+    tools: ['JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Python', 'Java', 'SQL'],
   },
   {
-    title: 'Frameworks & Libraries',
-    skillList: ['React', 'Redux', 'Gatsby', 'Next.js', 'Django', 'Express', 'Bootstrap'],
+    type: 'Frameworks & Libraries',
+    tools: ['React', 'Redux', 'Gatsby', 'Next.js', 'Django', 'Express', 'Bootstrap'],
   },
   {
-    title: 'Tools',
-    skillList: ['AWS', 'MongoDB', 'Git', 'Node'],
+    type: 'Tools',
+    tools: ['AWS', 'MongoDB', 'Git', 'Node'],
   },
   {
-    title: 'Design',
-    skillList: ['Photoshop', 'Figma', 'Adobe XD'],
+    type: 'Design',
+    tools: ['Photoshop', 'Figma', 'Adobe XD'],
   },
 ]
