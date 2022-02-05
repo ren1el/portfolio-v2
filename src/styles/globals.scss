@@ -2,38 +2,80 @@
 @import './variables';
 @import './mixins';
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
+  height: 100%;
+}
+
+body {
   background-color: $page-bg;
   color: $text-primary;
-  margin: 0;
-  padding: 0;
   font-family: $font-family;
   font-size: $fs-sm;
   font-weight: 300;
   line-height: 2;
   scroll-behavior: smooth;
-}
+  -webkit-font-smoothing: antialiased;
 
-body {
   &.noScroll {
     overflow: hidden;
   }
 }
 
+// #__next
 body > div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  isolation: isolate;
 }
 
 ::selection {
   color: $text-tertiary;
   background-color: $text-primary;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 a {
@@ -68,15 +110,6 @@ a {
 strong {
   color: $text-secondary;
   font-weight: 500;
-}
-
-button {
-  margin: 0;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  font-family: $font-family;
-  font-size: 1rem;
 }
 
 p {
