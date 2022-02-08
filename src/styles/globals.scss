@@ -13,6 +13,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;
@@ -25,7 +29,6 @@ body {
   font-size: $fs-sm;
   font-weight: 300;
   line-height: 2;
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 
   &.noScroll {
