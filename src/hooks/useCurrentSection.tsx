@@ -54,7 +54,7 @@ const useCurrentSection = () => {
     const getCurrentSection = (): void => {
       const sections = document.getElementsByTagName('section')
       const sectionsArray = Array.from(sections).filter((section) => section.id !== '')
-      let mostVisibleSection = { section: Section.About, viewportHeightPercent: 0 }
+      const mostVisibleSection = { section: Section.About, viewportHeightPercent: 0 }
 
       sectionsArray.forEach((section) => {
         const viewportHeightPercent = percentHeightOfViewport(section)
