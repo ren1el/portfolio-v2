@@ -2,6 +2,7 @@ import Footer from './Footer'
 import Header from './Header'
 import styles from '../styles/Layout.module.scss'
 import { combineClasses } from '../utils/classUtils'
+import SkipToContent from './SkipToContent'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -16,8 +17,11 @@ const Layout = ({
 }: LayoutProps): JSX.Element => {
   return (
     <>
+      <SkipToContent />
       <Header showAnimations={showAnimations} />
-      <main className={combineClasses(['container', styles.mainContainer])}>{children}</main>
+      <main id="content" className={combineClasses(['container', styles.mainContainer])}>
+        {children}
+      </main>
       {showFooter && <Footer />}
     </>
   )

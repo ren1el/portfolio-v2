@@ -1,0 +1,17 @@
+@import './variables';
+
+.skipToContent {
+  color: $text-secondary;
+  border: 1px solid $text-secondary;
+  padding: 0.5em 1em;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  border-radius: $border-radius;
+  transform: translateX(-120%);
+  transition: transform 300ms ease-in-out;
+}
+
+.skipToContent:focus {
+  transform: translateX(0);
+}
