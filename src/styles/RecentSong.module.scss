@@ -1,0 +1,92 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+$album-width-height: 75px;
+
+.container {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2em;
+  width: 80%;
+  @include fadeInAnimation(500ms);
+
+  &.desktop {
+    display: none;
+    z-index: 1;
+  }
+}
+
+.card {
+  background-color: $page-bg;
+  display: flex;
+  border: 1px solid $white;
+  padding: 1em;
+  padding-left: calc($album-width-height + 2em);
+  height: calc($album-width-height + 2em);
+  border-radius: $border-radius;
+  width: 100%;
+  align-items: center;
+  line-height: 1.5;
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+
+    .currentlyPlaying {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .title {
+      font-weight: 600;
+      width: 100%;
+    }
+  }
+}
+
+.album {
+  position: absolute;
+  width: $album-width-height;
+  height: $album-width-height;
+  top: 1em;
+  left: 1em;
+}
+
+@media (min-width: $bp-sm) {
+  .container {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: $bp-md) {
+  .container {
+    left: 2em;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: $container-width) {
+  .container {
+    position: fixed;
+
+    &.desktop {
+      display: inline-block;
+    }
+
+    &:hover {
+      .card {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+    }
+  }
+}

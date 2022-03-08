@@ -28,7 +28,11 @@ const Footer = (): JSX.Element => {
             Copyright © 2022, <strong>Reniel Ocampo</strong>.
           </span>
           <span>
-            Built using <a href={'https://nextjs.org/'}>Next.js</a>.
+            Built using{' '}
+            <a href={'https://nextjs.org/'} target={'_blank'} rel={'noreferrer'}>
+              Next.js
+            </a>
+            .
           </span>
         </div>
         <div className={styles.socials}>

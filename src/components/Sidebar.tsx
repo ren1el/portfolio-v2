@@ -3,6 +3,7 @@ import useCurrentSection from '../hooks/useCurrentSection'
 import styles from '../styles/Sidebar.module.scss'
 import { combineClasses, getEnterAnimationClasses } from '../utils/classUtils'
 import { getItemColorClass } from './Navbar'
+import RecentSong from './RecentSong'
 
 type SidebarProps = {
   isSidebarOpen: boolean
@@ -92,6 +93,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps): JSX.Element
           )
         })}
       </ul>
+      <RecentSong isVisible={hasOpenClass} />
     </nav>
   )
 }

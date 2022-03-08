@@ -3,6 +3,7 @@ import Header from './Header'
 import styles from '../styles/Layout.module.scss'
 import { combineClasses } from '../utils/classUtils'
 import SkipToContent from './SkipToContent'
+import RecentSong from './RecentSong'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -22,6 +23,7 @@ const Layout = ({
       <main id="content" className={combineClasses(['container', styles.mainContainer])}>
         {children}
       </main>
+      <RecentSong isVisible isDesktop />
       {showFooter && <Footer />}
     </>
   )

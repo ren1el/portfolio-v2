@@ -213,4 +213,10 @@ p {
       margin-right: 100px;
     }
   }
+
+  body {
+    &.noScroll {
+      overflow: auto;
+    }
+  }
 }
