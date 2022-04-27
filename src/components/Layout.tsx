@@ -4,6 +4,7 @@ import styles from '../styles/Layout.module.scss'
 import { combineClasses } from '../utils/classUtils'
 import SkipToContent from './SkipToContent'
 import RecentSong from './RecentSong'
+import ProgressBar from './ProgressBar'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -19,6 +20,7 @@ const Layout = ({
   return (
     <>
       <SkipToContent />
+      <ProgressBar />
       <Header showAnimations={showAnimations} />
       <main id="content" className={combineClasses(['container', styles.mainContainer])}>
         {children}
