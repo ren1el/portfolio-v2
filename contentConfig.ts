@@ -218,7 +218,7 @@ export const skills: Skill[] = [
   },
   {
     type: 'Tools',
-    tools: ['AWS', 'MongoDB', 'Git', 'Node'],
+    tools: ['AWS', 'MongoDB', 'Git', 'Node', 'NewRelic'],
   },
   {
     type: 'Design',
