@@ -136,6 +136,10 @@ export const otherProjects: NonFeaturedProject[] = [
         name: 'GitHub',
         link: 'https://github.com/ren1el/dogs-ai/',
       },
+      {
+        name: 'Permalink',
+        link: 'https://ren1el.github.io/dogs-ai/',
+      },
     ],
   },
   {
@@ -147,6 +151,10 @@ export const otherProjects: NonFeaturedProject[] = [
       {
         name: 'GitHub',
         link: 'https://github.com/ren1el/calendar-ai/',
+      },
+      {
+        name: 'Permalink',
+        link: 'https://ren1el.github.io/calendar-ai/',
       },
     ],
   },
