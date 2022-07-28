@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin fadeInAnimation($transitionDelay: 0) {
   &.start {
     opacity: 0;
@@ -38,4 +40,17 @@
     visibility: visible;
     transform: translateY(0);
   }
+}
+
+@mixin button {
+  display: inline-block;
+  color: $text-tertiary;
+  padding: 0.25em 1.5em;
+  border-radius: $border-radius;
+  background-color: $white;
+  line-height: normal;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  vertical-align: top;
 }

@@ -24,11 +24,8 @@
 }
 
 .contact {
-  padding: 0.25em 1.5em;
-  border-radius: $border-radius;
+  @include button;
   display: none;
-  justify-content: center;
-  align-items: center;
 }
 
 .brand,

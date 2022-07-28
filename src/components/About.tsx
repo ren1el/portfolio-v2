@@ -65,8 +65,8 @@ const About = (): JSX.Element => {
               capacity, email me!{' '}
               <strong>
                 →{' '}
-                <a href="mailto:contact@renielocampo.com" className={'animated'}>
-                  contact@renielocampo.com
+                <a href="mailto:renielxocampo@gmail.com" className={'animated'}>
+                  renielxocampo@gmail.com
                 </a>
               </strong>
             </p>

@@ -14,7 +14,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps): JSX.Element
   const [hoveringItem, setHoveringItem] = useState(-1)
   const [hasOpenClass, setHasOpenClass] = useState(false)
   const navRef = useRef<HTMLElement | null>(null)
-  const labels = ['About', 'Work', 'Experience', 'Skills'] // TODO: get as static props
+  const labels = ['About', 'Work', 'Experience', 'Skills', 'Contact'] // TODO: get as static props
   const currentSection = useCurrentSection()
 
   useEffect(() => {
