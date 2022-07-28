@@ -47,9 +47,7 @@ const Header = ({ showAnimations = true }: HeaderProps): JSX.Element => {
           <a href={'/'}>Reniel Ocampo</a>
         </div>
         <Navbar showAnimations={shouldShowFadeAnimations} />
-        {/* eslint-disable-next-line */}
         <a
-          href="/#Contact"
           className={combineClasses([
             styles.contact,
             shouldShowFadeAnimations && getEnterAnimationClasses(styles, isVisible),

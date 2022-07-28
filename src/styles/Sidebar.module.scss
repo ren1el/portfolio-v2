@@ -28,7 +28,6 @@
     display: flex;
     flex-direction: column;
     font-size: 1.75rem;
-    margin-top: -2em;
 
     .item {
       color: $nav-link-inactive;
@@ -50,7 +49,6 @@
   .nav {
     .list {
       font-size: 2rem;
-      margin-top: 0;
     }
   }
 }
