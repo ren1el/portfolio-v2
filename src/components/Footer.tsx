@@ -18,7 +18,7 @@ const Footer = (): JSX.Element => {
         <h2 className={styles.heading}>Thanks for stopping by!</h2>
         <h2 className={styles.heading}>Salut, à bientôt !</h2>
       </div>
-      <div className={styles.emailContainer}>
+      <div id="Contact" className={styles.emailContainer}>
         <a href="mailto:renielxocampo@gmail.com" className={styles.contact}>
           Email me
         </a>
