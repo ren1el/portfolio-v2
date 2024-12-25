@@ -1,5 +1,5 @@
 import styles from '../styles/About.module.scss'
-import profileImg from '../../public/images/me.png'
+import profileImg from '../../public/images/me.jpg'
 import Image from 'next/image'
 import IconLinks from './IconLinks'
 import { socialIconLinks } from '../../contentConfig'
