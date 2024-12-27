@@ -42,7 +42,7 @@ const About = (): JSX.Element => {
             </p>
             <p>
               I enjoy bridging the gap between engineering and design, and try to make sure that the
-              applications I work on are not only maintanable and efficient, but also look and feel
+              applications I work on are not only maintainable and efficient, but also look and feel
               good to use.
             </p>
           </div>
